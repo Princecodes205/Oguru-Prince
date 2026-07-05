@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
+import LogoMark from './LogoMark'
 
 /* ----------------------------------------------------------
    Site revision tag — bump this as the site evolves.
@@ -16,16 +17,7 @@ const navLinks = [
 function Logo() {
   return (
     <a href="#top" className="group flex items-center gap-2.5">
-      {/* Geometric mark — a square divided into a quadrant pattern,
-          suggesting blueprint gridded panels */}
-      <span
-        className="relative inline-block h-7 w-7 border border-line bg-panel transition-colors group-hover:border-accent"
-        aria-hidden="true"
-      >
-        <span className="absolute left-1/2 top-0 h-full w-px bg-line" />
-        <span className="absolute top-1/2 left-0 w-full h-px bg-line" />
-        <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 bg-accent" />
-      </span>
+      <LogoMark />
       <span className="font-display text-[15px] font-semibold tracking-[0.18em] text-primary">
         CHAMPS
       </span>

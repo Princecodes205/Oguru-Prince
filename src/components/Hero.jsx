@@ -235,7 +235,7 @@ function NodeDiagram() {
 
 function LagosAnnotation() {
   return (
-    <div className="pointer-events-none absolute bottom-6 left-6 hidden font-mono text-[10px] uppercase tracking-[0.2em] text-mono md:block">
+    <div className="pointer-events-none absolute bottom-6 left-30 hidden font-mono text-[10px] uppercase tracking-[0.2em] text-mono md:block">
       <div className="flex items-center gap-2">
         <span className="inline-block h-1.5 w-1.5 bg-accent" />
         <span>06.5244° N · 03.3792° E</span>

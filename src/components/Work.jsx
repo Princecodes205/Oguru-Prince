@@ -131,7 +131,7 @@ export default function Work() {
         <div className="mb-12 flex flex-col gap-4 md:mb-16 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.24em] text-mono">
-              Sheet 03 / 07
+              Sheet 03 / 06
             </p>
             <h2 className="font-display text-3xl font-medium leading-tight tracking-tight md:text-5xl">
               Selected work,
@@ -140,8 +140,7 @@ export default function Work() {
             </h2>
           </div>
           <p className="max-w-md text-[14px] leading-relaxed text-mono md:text-right">
-            A working set, not a highlight reel. Replace placeholders with
-            the projects that matter.
+            Real Projects will be added soon.
           </p>
         </div>
 

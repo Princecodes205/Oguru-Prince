@@ -141,7 +141,7 @@ export default function Disciplines() {
         <div className="mb-12 flex flex-col gap-4 md:mb-16 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.24em] text-mono">
-              Sheet 02 / 07
+              Sheet 02 / 06
             </p>
             <h2 className="font-display text-3xl font-medium leading-tight tracking-tight md:text-5xl">
               Three disciplines,
