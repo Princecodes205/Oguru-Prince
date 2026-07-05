@@ -1,0 +1,157 @@
+/* ============================================================
+   GLOBAL STYLES — Oguru Portfolio v1.0
+   - Imports theme tokens, fonts, Tailwind v4
+   - Sets up the blueprint grid background (CSS only, no image)
+   ============================================================ */
+
+@import './theme.css';
+@import "tailwindcss";
+
+/* Theme registration for Tailwind v4 — lets us use colors like
+   bg-base, text-primary, font-display, etc. in utility classes */
+@theme {
+  --color-base: var(--bg-base);
+  --color-panel: var(--bg-panel);
+  --color-grid: var(--bg-grid);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-primary: var(--text-primary);
+  --color-mono: var(--text-mono);
+  --color-line: var(--border);
+
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* ----------------------------------------------------------
+   Base
+   ---------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ----------------------------------------------------------
+   Blueprint grid background
+   - Two layers: a fine 24px grid + a major 120px grid
+   - Drawn with CSS, no image
+   - Fixed so it doesn't move on scroll, low opacity
+   ---------------------------------------------------------- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    /* Major grid — every 120px */
+    linear-gradient(to right, var(--bg-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bg-grid) 1px, transparent 1px),
+    /* Minor grid — every 24px */
+    linear-gradient(to right, var(--bg-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bg-grid) 1px, transparent 1px);
+  background-size:
+    120px 120px,
+    120px 120px,
+    24px 24px,
+    24px 24px;
+  background-position:
+    -1px -1px,
+    -1px -1px,
+    -1px -1px,
+    -1px -1px;
+  opacity: 0.35;
+  mask-image: radial-gradient(ellipse at center, black 0%, black 50%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, black 50%, transparent 95%);
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+}
+
+/* ----------------------------------------------------------
+   Type defaults
+   ---------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  max-width: 65ch;
+  color: var(--text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------------------
+   Focus ring — uses the accent for consistency
+   ---------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ----------------------------------------------------------
+   Selection
+   ---------------------------------------------------------- */
+::selection {
+  background-color: var(--accent);
+  color: var(--bg-base);
+}
+
+/* ----------------------------------------------------------
+   Respect reduced motion globally as a safety net
+   ---------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

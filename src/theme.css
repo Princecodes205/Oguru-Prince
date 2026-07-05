@@ -1,0 +1,30 @@
+/* ============================================================
+   THEME TOKENS — edit colors here, components stay untouched
+   v1.0 — dark mode locked
+   ============================================================ */
+
+:root {
+  /* Surfaces */
+  --bg-base: #0A0A0F;        /* page background */
+  --bg-panel: #12121A;       /* elevated spec-sheet panels */
+  --bg-grid: #1A1A26;        /* blueprint grid line color */
+
+  /* Accent — deep glowing violet */
+  --accent: #7C3AED;
+  --accent-soft: #A78BFA;
+
+  /* Text */
+  --text-primary: #E8E6F0;   /* off-white with lavender tint */
+  --text-mono: #9A98A8;      /* cool gray for mono labels */
+
+  /* Lines */
+  --border: #26263A;
+
+  /* Type scale tokens */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
